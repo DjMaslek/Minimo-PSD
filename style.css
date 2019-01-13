@@ -9,7 +9,6 @@ body,html{
 	margin: 0;
 	font-family: 'Playfair Display Regular'; 
 }
-
 /* header start */
 header{
 	padding: 4.375em;
@@ -31,6 +30,13 @@ header{
 }
 .header-nav a{
 	margin-right: 4.375em;
+}
+.header-nav a:hover{
+	border-bottom: 2px solid #000;
+	padding-bottom: 5px;
+}
+.nav-btn{
+	display: none;
 }
 /* header end */
 /* styles for sections */
@@ -176,4 +182,36 @@ footer a{
 }
 .instagram{
 	background-image: url(images/instagram.png);	
+}
+@media screen and (max-width: 770px) {
+	.header-nav{
+		display: block;
+		margin:auto;
+		margin-top: 20px;
+	}
+	.header-nav a{
+	margin-right: 10px;
+	}	
+}
+@media screen and (max-width: 455px) {
+	.header-nav{
+		width: 100%;
+		position: relative;
+	}
+	.header-nav a{
+	display: block;
+	padding: 5px;
+	}
+	.header-nav a:hover{
+		border-bottom: 2px solid #000;
+	}
+	.nav-btn{
+		position: absolute;
+	    top: -55px;
+	    right: 0;
+	    font-size: 1.4em;
+	}
+	a.responsive {
+		display: none;
+	}	
 }
