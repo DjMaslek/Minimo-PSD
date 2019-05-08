@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 @font-face{
-	font-family: 'Playfair Display Regular';
-	src: url('FONTS/Playfair_Display/PlayfairDisplay-Regular.ttf');
 	font-family:  'Ubuntu';
-	src: url('FONTS/Ubuntu/Ubuntu-Regular.ttf')
+	src: url('fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
+@font-face{
+	font-family: 'Playfair Display Regular';
+	src: url('fonts/PlayfairDisplay/PlayfairDisplayRegular.ttf');
 }
 body,html{
 	margin: 0;
@@ -11,12 +13,16 @@ body,html{
 }
 /* header start */
 header{
-	padding: 4.375em;
+	width: 80%;
+	margin: auto;
+	/*padding: 4.375em;*/
+	padding-bottom: 70px;
+	padding-top: 50px;
 }
 .logo, .header-nav a{
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #000;	
+	color: #000;
 }
 .logo{
 	float: left;
@@ -85,11 +91,12 @@ header{
 	width: 45%;
 	margin-right: 2%;
 	display: inline-block;
+	overflow: hidden;
 }
 .post-mini img{
 	width: 100%;
 }
-.post-mini:nth-child(odd){
+.post-mini:nth-child(even){
 	margin-left:7%;
 	margin-right: 0;
 }
@@ -117,19 +124,32 @@ header{
 }
 .newsletter-block input:focus{
 	outline: none;
+	background-color: #404040;
+	border-top-left-radius: 3px;
+	transition: .5s background-color ease, .5s border-top-left-radius ease;
+}
+.newsletter-block input[placeholder]{
+	padding-left: 10px;
+	color: #B2B2B2;
 }
 .newsletter-block button{
 	background-image: url(images/sendicon.png);
-	background-size: 25px;
+	background-size: 32px;
 	background-repeat: no-repeat;
 	background-color: #D6D6D6;
-	width: 32px;
-	height: 30px;
+	background-position: 7px 13px;
+	width: 47px;
+	height: 45px;
 	border:none;
-	padding-bottom:17px;
+	position: relative;
+	bottom:-19px;
+	/*right: -10px;*/
 }
 .newsletter-block button:focus{
 	outline: none;
+}
+.newsletter-block button:hover{
+	background-color: #9A9A9A;
 }
 /* newsletter block end*/
 /* load more button*/
@@ -142,6 +162,11 @@ header{
 	margin:auto;
 	margin-top: 70px;
 	margin-bottom: 200px;
+}
+.load-more:hover{
+	outline: none;
+	background-color: #404040;
+	color:#FFF;
 }
 /* footer*/
 footer{
@@ -167,6 +192,9 @@ footer a{
 	color: black;
 	margin-right: 10px;
 }
+footer a:hover{
+	text-decoration: underline;
+}
 .socials{
 	display: inline-block;
 	width: 17px;
@@ -183,7 +211,11 @@ footer a{
 .instagram{
 	background-image: url(images/instagram.png);	
 }
-/* media queries */
+
+
+
+
+
 @media screen and (max-width: 770px) {
 	.header-nav{
 		display: block;
@@ -191,8 +223,22 @@ footer a{
 		margin-top: 20px;
 	}
 	.header-nav a{
-	margin-right: 10px;
+		margin-right: 10px;
 	}	
+	.left-align{
+		float: none;
+		display: block;
+		margin-left: 8.75em;
+		margin-bottom: 10px;
+	}
+	.right-align{
+		display: block;
+		float: none;
+		margin-left: 8.75em;
+	}
+	footer p{
+		padding-top: 10px;
+	}
 }
 @media screen and (max-width: 455px) {
 	.header-nav{
@@ -215,4 +261,12 @@ footer a{
 	a.responsive {
 		display: none;
 	}	
+	.post-mini{
+		width: 100%;
+		margin-right: 0;
+	}
+	.post-mini:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 0;
+}
 }
